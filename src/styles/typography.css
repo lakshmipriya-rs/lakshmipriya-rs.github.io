@@ -436,3 +436,133 @@ pre {
   font-weight: 400;
   line-height: var(--leading-code);
 }
+
+/* ── Principles & reports ─────────────────────────────────────────────── */
+.principle-title {
+  font-size: var(--type-step-title);
+  font-weight: 600;
+  line-height: var(--leading-title);
+  letter-spacing: var(--tracking-title);
+}
+.principle-belief {
+  font-size: var(--type-body);
+  line-height: var(--leading-body);
+}
+.principle-practice,
+.principle-link,
+.report-source,
+.report-tab,
+.drift-legend,
+.drift-impact,
+.mail-head,
+.mail-lead,
+.mail-table {
+  font-size: var(--type-body-sm);
+  line-height: 1.6;
+}
+.synthetic-tag,
+.drift-stats dt,
+.pd-head {
+  font-size: var(--type-eyebrow);
+  letter-spacing: var(--tracking-label);
+}
+.report-title {
+  font-size: var(--type-card-title);
+  font-weight: 600;
+  line-height: var(--leading-title);
+}
+.report-summary {
+  font-size: var(--type-body);
+  line-height: var(--leading-body);
+}
+.report-command,
+.report-log,
+.drift-matrix,
+.drift-diff,
+.drift-key-name,
+.drift-key-where {
+  font-size: var(--type-code);
+  line-height: var(--leading-code);
+}
+.report-log {
+  font-size: 0.75rem;
+}
+.drift-stats dd {
+  font-size: var(--type-body-sm);
+  font-weight: 600;
+}
+.sev {
+  font-size: var(--type-eyebrow);
+  font-weight: 600;
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
+}
+.mail-banner {
+  font-size: var(--type-body);
+  font-weight: 700;
+}
+.mail-button {
+  font-size: var(--type-small);
+  font-weight: 600;
+}
+.mail-head b,
+.mail-table th {
+  font-weight: 500;
+}
+
+/* ── Dashboards & charts ──────────────────────────────────────────────── */
+.dash-tab,
+.dash-url,
+.dash-range,
+.dash-nav,
+.dash-panel-meta,
+.kpi-label,
+.kpi-sub,
+.viz-legend,
+.viz-tip,
+.status-pill,
+.strip-axis,
+.gantt-axis {
+  font-size: var(--type-eyebrow);
+  line-height: 1.5;
+}
+.dash-title {
+  font-size: var(--type-card-title);
+  font-weight: 600;
+  line-height: var(--leading-title);
+}
+.dash-panel-title {
+  font-size: var(--type-small);
+  font-weight: 600;
+}
+.kpi-value {
+  font-size: var(--type-stat-value);
+  font-weight: 700;
+  line-height: 1.3;
+  letter-spacing: var(--tracking-title);
+}
+.dash-list,
+.barlist,
+.gantt,
+.strips,
+.dash-notes {
+  font-size: var(--type-small);
+  line-height: 1.55;
+}
+.dash-notes-title {
+  font-size: var(--type-eyebrow);
+  letter-spacing: var(--tracking-label);
+}
+.dash-brand,
+.viz-tip strong,
+.barlist-value,
+.gantt-dur {
+  font-weight: 600;
+}
+.viz-tick {
+  font-size: 11px;
+}
+.viz-endlabel {
+  font-size: 12px;
+  font-weight: 600;
+}

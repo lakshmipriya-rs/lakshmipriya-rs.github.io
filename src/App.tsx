@@ -5,7 +5,10 @@ import { Contact } from "./components/Contact";
 import { Education } from "./components/Education";
 import { Experience } from "./components/Experience";
 import { Header } from "./components/Header";
+import { Dashboards } from "./components/Dashboards";
 import { Hero } from "./components/Hero";
+import { Principles } from "./components/Principles";
+import { Reports } from "./components/Reports";
 import { Skills } from "./components/Skills";
 import { StatusBar } from "./components/StatusBar";
 import { useTheme } from "./lib/theme";
@@ -38,7 +41,10 @@ function App() {
       />
       <main id="main-content">
         <Hero />
+        <Dashboards />
+        <Principles />
         <CaseStudies />
+        <Reports />
         <Skills />
         <Experience />
         <Education />

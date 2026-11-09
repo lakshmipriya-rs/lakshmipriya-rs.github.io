@@ -5,10 +5,12 @@ import type { Theme } from "../lib/theme";
 
 // tmux-style window list: index, name, and "*" on the active window.
 const NAV_ITEMS = [
-  { id: "cases", label: "case-studies" },
+  { id: "dashboards", label: "dashboards" },
+  { id: "principles", label: "principles" },
+  { id: "cases", label: "cases" },
+  { id: "reports", label: "reports" },
   { id: "skills", label: "skills" },
   { id: "experience", label: "experience" },
-  { id: "education", label: "education" },
   { id: "contact", label: "contact" },
 ] as const;
 
@@ -56,7 +58,7 @@ export function Header({ theme, onToggleTheme, onOpenConsole }: HeaderProps) {
       if (event.key === "Escape") setMenuOpen(false);
     };
     const onResize = () => {
-      if (window.innerWidth > 960) setMenuOpen(false);
+      if (window.innerWidth > 1140) setMenuOpen(false);
     };
     window.addEventListener("keydown", onKey);
     window.addEventListener("resize", onResize);

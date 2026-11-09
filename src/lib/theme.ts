@@ -13,15 +13,13 @@ const readStoredTheme = (): Theme | null => {
   }
 };
 
-const systemTheme = (): Theme =>
-  typeof window.matchMedia === "function" &&
-  window.matchMedia("(prefers-color-scheme: light)").matches
-    ? "light"
-    : "dark";
+// Dark-first: a terminal portfolio reads best dark. Light stays one click away
+// and the visitor's choice is remembered.
+const DEFAULT_THEME: Theme = "dark";
 
 export function useTheme() {
   const [theme, setTheme] = useState<Theme>(
-    () => readStoredTheme() ?? systemTheme(),
+    () => readStoredTheme() ?? DEFAULT_THEME,
   );
 
   useEffect(() => {

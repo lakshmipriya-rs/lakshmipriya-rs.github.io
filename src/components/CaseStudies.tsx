@@ -116,7 +116,7 @@ export function CaseStudies() {
           title="Case Studies"
           titleId="cases-title"
         >
-          Seven production systems across provisioning, platform, and
+          {content.cases.length} systems across provisioning, platform, and
           reliability engineering: the problem, how each pipeline runs step by
           step, the measured result, and what comes next.
         </SectionHeader>
