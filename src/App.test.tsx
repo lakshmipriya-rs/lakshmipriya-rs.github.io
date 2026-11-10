@@ -226,7 +226,7 @@ describe("platform dashboards", () => {
     );
     expect(
       within(section).getByRole("heading", {
-        name: "Config drift · metro-shared (prod)",
+        name: "Config drift · all monitored clusters (prod)",
       }),
     ).toBeInTheDocument();
     // every chart ships a screen-reader table

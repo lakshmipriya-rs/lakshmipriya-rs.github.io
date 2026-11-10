@@ -185,7 +185,7 @@ export const reports: Report[] = [
     title: "Configuration drift report",
     caseId: "config-drift",
     summary:
-      "A 15-minute check across a shared app cluster. The baseline is whatever most servers agree on; only the files that differ get parsed key by key and rated.",
+      "One cluster's slice of the 15-minute check that covers 300+ files on 30+ servers. The baseline is whatever most servers agree on; only the files that differ get parsed key by key and rated.",
     cluster: "metro-shared (prod)",
     checkedAt: "2026-11-04 09:45 UTC",
     servers: ["app01", "app02", "app03", "app04", "app05", "app06"],
