@@ -39,17 +39,25 @@ function CountUp({ value, start }: { value: string; start: boolean }) {
   const [display, setDisplay] = useState(value);
 
   useEffect(() => {
-    const match = /^([~$]?)(\d+(?:\.\d+)?)(.*)$/.exec(value);
+    const match = /^([~$]?)(\d[\d,]*(?:\.\d+)?)(.*)$/.exec(value);
     if (!start || !match || prefersReducedMotion()) return;
     const [, prefix, digits, suffix] = match;
-    const target = Number.parseFloat(digits);
+    const grouped = digits.includes(",");
+    const target = Number.parseFloat(digits.replace(/,/g, ""));
     const decimals = digits.split(".")[1]?.length ?? 0;
+    const format = (n: number) =>
+      grouped
+        ? n.toLocaleString("en-US", {
+            minimumFractionDigits: decimals,
+            maximumFractionDigits: decimals,
+          })
+        : n.toFixed(decimals);
     const startedAt = performance.now();
     let frame = 0;
     const tick = (now: number) => {
       const progress = Math.min((now - startedAt) / 1100, 1);
       const eased = 1 - Math.pow(1 - progress, 3);
-      setDisplay(`${prefix}${(target * eased).toFixed(decimals)}${suffix}`);
+      setDisplay(`${prefix}${format(target * eased)}${suffix}`);
       if (progress < 1) frame = requestAnimationFrame(tick);
     };
     frame = requestAnimationFrame(tick);

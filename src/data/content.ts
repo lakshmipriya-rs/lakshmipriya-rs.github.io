@@ -133,8 +133,8 @@ export const content: PortfolioContent = {
       caseId: "epilogue",
     },
     {
-      value: "35%",
-      label: "lower AWS costs through observability optimization",
+      value: "$4,500/mo",
+      label: "AWS spend, down from $7,000 (−35%) after CloudWatch cleanup",
       caseId: "epilogue",
     },
   ],
@@ -395,11 +395,11 @@ export const content: PortfolioContent = {
       context: "AssetWorks · Reliability",
       category: "reliability",
       outcome:
-        "Automated, 15-minute configuration drift detection across shared production servers.",
+        "Automated, 15-minute configuration drift detection across 300+ files on 30+ production servers.",
       metrics: [
-        { value: "144+", label: "configuration files watched" },
-        { value: "13", label: "production servers" },
-        { value: "64", label: "shared tenants" },
+        { value: "300+", label: "configuration files watched" },
+        { value: "30+", label: "production servers" },
+        { value: "15 min", label: "check interval" },
       ],
       steps: [
         step(
@@ -412,13 +412,13 @@ export const content: PortfolioContent = {
           "fanout",
           "Parallel fan-out",
           ["Celery", "Python", "WinRM"],
-          "A Celery fan-out distributes checks across 13 production servers so they are evaluated in parallel.",
+          "A Celery fan-out distributes checks across 30+ production servers so they are evaluated in parallel.",
         ),
         step(
           "collect",
           "State collection",
           ["WinRM", "PowerShell", "Windows"],
-          "Each server is queried over WinRM and the current state of 144+ configuration files is collected for comparison.",
+          "Each server is queried over WinRM and the current state of 300+ configuration files is collected for comparison.",
         ),
         step(
           "tenant",
@@ -448,7 +448,7 @@ export const content: PortfolioContent = {
       problem:
         "Manual configuration audits could not reliably catch unexpected changes across a production fleet shared by many tenants.",
       result:
-        "A continuous drift-detection loop gives operators a persistent, actionable view of configuration changes every 15 minutes.",
+        "A continuous drift-detection loop covers 300+ files on 30+ servers and gives operators a persistent, actionable view of configuration changes every 15 minutes, with shared and customer-specific dashboards.",
       impact:
         "Less effort to monitor shared customer environments, and configuration issues surface before they become hard-to-trace incidents.",
       future:
@@ -812,7 +812,7 @@ export const content: PortfolioContent = {
         "Server-Sent Events",
         "OpenShift",
         "Bicep",
-        "Azure NSG",
+        "Azure Firewall Policy",
         "Jenkins",
         "Trivy",
         "Helm",
@@ -827,7 +827,8 @@ export const content: PortfolioContent = {
       hash: "a3f9c21",
       company: "AssetWorks",
       role: "DevOps Engineer",
-      dates: "May 2026 – Oct 2026",
+      dates: "May 2026 – Present",
+      current: true,
       bullets: [
         "Turned fragmented hosting operations into reusable, self-service workflows for provisioning, fleet management, and validation.",
         "Designed an operational layer that connects infrastructure data with day-to-day actions, giving operators one place to investigate and manage hosted environments.",
@@ -838,7 +839,7 @@ export const content: PortfolioContent = {
         "Built self-service Windows VM provisioning with capacity-based ESXi placement, IP/DNS allocation, and approval-gated Azure DevOps pipelines, reducing delivery from 7 days to about 20 minutes and provisioning 15+ VMs.",
         "Extended Navigator configuration checks with Celery fan-out/fan-in across 300+ files on 30+ servers every 15 minutes, with shared and customer-specific dashboards to eliminate manual audits.",
         "Automated post-maintenance health and database-connectivity checks for 169+ customer applications using Azure DevOps, Playwright, and Key Vault; added self-service onboarding that generates customer-specific YAML and test workflows.",
-        "Automated production IP whitelisting with Azure NSG and Bicep behind IT-approved pull requests, and validated database replication across 6–7 test phases.",
+        "Automated production IP allowlisting as code with Azure Firewall Policy DNAT rule collections in Bicep, shipped through Azure DevOps validate → what-if → deploy behind IT-approved pull requests; validated database replication across 6–7 test phases.",
       ],
       stack: [
         "ManageIQ",
@@ -921,7 +922,7 @@ export const content: PortfolioContent = {
     {
       hash: "4c8f1b2",
       company: "Intellint Technology LLP",
-      role: "Full Stack Developer",
+      role: "Full Stack Engineer",
       dates: "Apr 2022 – Apr 2023",
       bullets: [
         "Developed an internal logistics platform that replaced repetitive shipment-management tasks with a streamlined web workflow.",

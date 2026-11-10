@@ -44,7 +44,7 @@ function Panel({
   );
 }
 
-const usd = (v: number) => `$${(v / 1000).toFixed(1)}k`;
+const usd = (v: number) => `$${Math.round(v).toLocaleString("en-US")}`;
 
 interface Dashboard {
   id: string;
@@ -243,10 +243,10 @@ const DASHBOARDS: Dashboard[] = [
     tab: "Config drift",
     icon: <GitCompare size={14} aria-hidden="true" />,
     app: "Navigator",
-    url: "navigator.corp.example/drift/metro-shared",
+    url: "navigator.corp.example/drift",
     nav: ["Fleet", "Drift", "Jobs", "Certs", "API"],
     activeNav: "Drift",
-    heading: "Config drift · metro-shared (prod)",
+    heading: "Config drift · all monitored clusters (prod)",
     range: "14 days",
     caseId: "config-drift",
     takeaways: [
@@ -257,15 +257,15 @@ const DASHBOARDS: Dashboard[] = [
     render: () => (
       <>
         <div className="kpi-row">
-          <Kpi label="files tracked" value="144" sub="13 servers" />
-          <Kpi label="in sync" value="141" status="good" sub="97.9%" />
+          <Kpi label="files tracked" value="300+" sub="every 15 min" />
+          <Kpi label="servers" value="30+" status="good" sub="all reachable" />
           <Kpi
             label="drifted now"
             value="3"
             status="critical"
             sub="1 critical"
           />
-          <Kpi label="last check" value="4 min ago" sub="every 15 min" />
+          <Kpi label="last check" value="4 min ago" sub="next in 11 min" />
         </div>
         <div className="dash-panels">
           <Panel title="New drift findings per day" meta="by severity" wide>
@@ -321,15 +321,20 @@ const DASHBOARDS: Dashboard[] = [
     range: "7 months",
     caseId: "epilogue",
     takeaways: [
-      "Monthly AWS spend fell from $7.0k to $4.5k after cutting redundant CloudWatch ingestion and unused metrics.",
+      "Monthly AWS spend fell from $7,000 to $4,500 after cutting redundant CloudWatch ingestion and unused metrics.",
       "Autoscaling (HPA) follows the daily traffic curve, so capacity is paid for only when it's used.",
       "Same visibility, less spend: monitoring got leaner, not blinder.",
     ],
     render: () => (
       <>
         <div className="kpi-row">
-          <Kpi label="AWS / month" value="$4.5k" sub="from $7.0k" />
-          <Kpi label="cost" value="−35%" status="good" sub="7 months" />
+          <Kpi label="AWS / month" value="$4,500" sub="from $7,000" />
+          <Kpi
+            label="cost"
+            value="−35%"
+            status="good"
+            sub="CloudWatch cleanup"
+          />
           <Kpi
             label="downtime"
             value="−45%"

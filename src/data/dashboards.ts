@@ -125,8 +125,8 @@ export const dashboards = {
         status: "good" as Status,
       },
       {
-        job: "drift · metro-shared",
-        target: "13 servers",
+        job: "drift · all clusters",
+        target: "30+ servers",
         took: "41s",
         label: "drift",
         status: "serious" as Status,
